@@ -1,10 +1,10 @@
 import socket
 """Author: Shaked Asido"""
 
-"""Description: This is the server's side: 
-The server gets a name and an address of the sender (client 1), which he inserts into a names&addresses dictionary. 
-Then he gets another message with the name of the anf a massage designated to client 2. 
-if client 2 appears in the names at the dictionary, the server sends the message client 1 sent to client 2."""
+"""Description: This is the server's side: The server gets a name and an address of the sender (first client), 
+which he inserts into a names&addresses dictionary. Then he gets another message with the name of the anf a massage 
+designated to the other client. if the other client appears in the names at the dictionary, the server sends the 
+message the first client sent to the other client."""
 
 UDP_IP = '0.0.0.0'
 UDP_PORT = 9999

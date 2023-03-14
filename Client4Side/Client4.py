@@ -2,6 +2,14 @@ from threading import Thread
 import socket
 import sys
 
+"Author: Shaked Asido"
+
+"""Description: Client 4's side: Client 4 sends her\his name and an address of the server, and the server inserts 
+them into a names&addresses dictionary. Then the client sends another message with the name of the other client s\he 
+wants to send a message to and the message, superheated with spaces. if the other client appears in the names at the 
+dictionary, the server sends the message client 4 sent to the other client. else: client 4 will get a message say's: 
+"no such user"."""
+
 SERVER_ADDR = ('127.0.0.1', 9999)
 BUFFER_SIZE = 1024
 
