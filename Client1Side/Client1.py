@@ -5,9 +5,9 @@ import sys
 "Author: Shaked Asido"
 
 """Description: Client 1's side: Client 1 sends her\his name and an address of the server, and the server inserts 
-them into a names&addresses dictionary. Then the client sends another message with the name of the other client 
-(client 2) s\he wants to send a message to and the message, superheated with spaces. if client 2 appears in the names 
-at the dictionary, the server sends the message client 1 sent to client 2. else: client 1 will get a message say's: 
+them into a names&addresses dictionary. Then the client sends another message with the name of the other client s\he 
+wants to send a message to and the message, superheated with spaces. if the other client appears in the names at the 
+dictionary, the server sends the message client 1 sent to the other client. else: client 1 will get a message say's: 
 "no such user"."""
 
 SERVER_ADDR = ('127.0.0.1', 9999)
