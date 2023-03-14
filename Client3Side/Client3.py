@@ -1,8 +1,8 @@
 from threading import Thread
 import socket
 import sys
-
 "Author: Shaked Asido"
+
 """Description: Client 1's side: Client 1 sends her\his name and an address of the server, and the server inserts 
 them into a names&addresses dictionary. Then the client sends another message with the name of the other client 
 (client 2) s\he wants to send a message to and the message, superheated with spaces. if client 2 appears in the names 
