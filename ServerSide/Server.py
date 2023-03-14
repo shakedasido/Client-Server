@@ -1,4 +1,10 @@
 import socket
+"""Author: Shaked Asido"""
+
+"""Description: This is the server's side: 
+The server gets a name and an address of the sender (client 1), which he inserts into a names&addresses dictionary. 
+Then he gets another message with the name of the anf a massage designated to client 2. 
+if client 2 appears in the names at the dictionary, the server sends the message client 1 sent to client 2."""
 
 UDP_IP = '0.0.0.0'
 UDP_PORT = 9999
@@ -15,21 +21,21 @@ try:
     name_and_addr_dict = {}
     while True:
         # The client sends her\his name
-        data_from, addr = server_sock.recvfrom(BUFFER_SIZE)
+        data, addr = server_sock.recvfrom(BUFFER_SIZE)
         # We add its name and address into the dictionary
         name_and_addr_dict[data.decode()] = addr
-
         # The client sends a message and the name of the person s\he wants to send in to
         data, _ = server_sock.recvfrom(BUFFER_SIZE)
         name_and_message = data.decode().split()
         if name_and_message[0] in name_and_addr_dict:
-
+            # Save the name of client 2 that client 1 wants to send message to.
+            name = name_and_message[0]
             # Remove name
             name_and_message.remove(name_and_message[0])
             # Take the message out of the string
             message = " ".join(name_and_message)
             # Send the encoded message with the address to the client
-            server_sock.sendto(message.encode(), name_and_addr_dict[name_and_message[0]])
+            server_sock.sendto(message.encode(), name_and_addr_dict[name])
         else:
             server_sock.sendto("No such user".encode(), addr)
 
